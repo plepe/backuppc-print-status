@@ -12,7 +12,9 @@ $data = json_decode($data, true);
 
 $time = time();
 
-printf("%-30s  %-5s\n", "Host", "Age");
+print "Status of all backups:\n\n";
+
+printf("%-30s  %5s\n", "Host", "Age");
 foreach($data as $host=>$info) {
   if(array_key_exists('lastGoodBackupTime', $info)) {
     printf("%-30s  %5.1fd\n", $host, ($time - $info['lastGoodBackupTime']) / 86400.0);

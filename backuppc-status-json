@@ -14,11 +14,6 @@ else {
 
 # convert to data structure
 eval $code;
-# print encode_json \%Status;
 
-# print each host info
-foreach my $k (keys %Status) {
-  print "$k\n";
-  print encode_json $Status{$k};
-  print "\n";
-}
+# print to JSON
+print encode_json \%Status;

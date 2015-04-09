@@ -1,0 +1,18 @@
+#!/usr/bin/php
+<?php
+$f = popen("./backuppc-status-json", "r");
+$data = "";
+while($r = fread($f, 8192))
+  $data .= $r;
+pclose($f);
+
+$data = json_decode($data, true);
+
+$time = time();
+
+printf("%-30s  %-5s\n", "Host", "Age");
+foreach($data as $host=>$info) {
+  if(array_key_exists('lastGoodBackupTime', $info)) {
+    printf("%-30s  %5.1fd\n", $host, ($time - $info['lastGoodBackupTime']) / 86400.0);
+  }
+}

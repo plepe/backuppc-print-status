@@ -19,6 +19,7 @@ $text = "Status of all backups:\n\n";
 $state_format = array(
   'Status_idle' => "idle",
   'Status_backup_in_progress' => "in progress",
+  'Status_link_pending' => "link pending",
 );
 
 $text .= sprintf("%-30s  %6s %12s\n", "Host", "Age", "Status");

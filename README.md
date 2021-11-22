@@ -1,6 +1,7 @@
+# backuppc-print-status
 Print status of each backup host
 
-INSTALL
+## INSTALL
 ```sh
 apt install php-cli libjson-xs-perl git
 cd /usr/local
@@ -14,3 +15,6 @@ Add this to `/etc/crontab`:
 ```
 0 9	* * * 	backuppc /usr/local/backuppc-print-status/backuppc-print-status 2> /dev/null
 ```
+
+## Contributors
+* Stephan Bösch-Plepelits <skunk@xover.mud.at>

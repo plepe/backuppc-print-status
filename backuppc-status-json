@@ -2,7 +2,7 @@
 use JSON::XS;
 
 # read perl data from BackupPC
-$code = `/usr/share/backuppc/bin/BackupPC_serverMesg status hosts`;
+$code = `$ARGV[0]/BackupPC_serverMesg status hosts`;
 
 if($code =~ /^Got reply: (.*)$/) {
   $code = $1;

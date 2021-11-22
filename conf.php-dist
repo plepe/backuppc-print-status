@@ -1,2 +1,5 @@
 <?php
 $mailto = "admin@example.com";
+
+# Where to find the 'BackupPC_serverMesg' utility of BackupPC
+$backuppc_bin_path = "/usr/local/BackupPC/bin";
